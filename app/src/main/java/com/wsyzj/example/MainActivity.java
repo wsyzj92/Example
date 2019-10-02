@@ -2,7 +2,6 @@ package com.wsyzj.example;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -10,12 +9,14 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.wsyzj.example.arithmetic.Arithmetic;
+import com.wsyzj.example.activity.ArithmeticActivity;
+import com.wsyzj.example.activity.ReflectActivity;
+import com.wsyzj.example.aop.AspectJActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String[] mTitles = {};
-    private Class[] mClasses = {};
+    private String[] mTitles = {"算法", "反射技术", "AOP面向切面用户行为统计"};
+    private Class[] mClasses = {ArithmeticActivity.class, ReflectActivity.class, AspectJActivity.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,21 +34,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        int[] array = {2, 1, 4, 3, 6, 5, 8, 7, 10, 9};
-//        int[] array = Arithmetic.bubbleSort(array);
-//        int[] array = Arithmetic.selectionSort(array);
-//        int[] array = Arithmetic.insertionSort(array);
-//        Arithmetic.quickSort(array, 0, array.length - 1);
-        int[] array1 = Arithmetic.shellSort(array);
-        count(array1);
-    }
-
-    public void count(int[] array) {
-
-        for (int i : array) {
-            Log.e("ha", i + "--");
-        }
 
     }
 }

@@ -1,4 +1,4 @@
-package com.wsyzj.example;
+package com.wsyzj.example.test;
 
 /**
  * <pre>

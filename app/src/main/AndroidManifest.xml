@@ -19,8 +19,13 @@
             </intent-filter>
         </activity>
 
-        // 算法
+        <!-- 算法 -->
         <activity android:name=".activity.ArithmeticActivity" />
+        <!-- 反射 -->
+        <activity android:name=".activity.ReflectActivity" />
+        <!-- AspectJ -->
+        <activity android:name=".aop.AspectJActivity" />
+
     </application>
 
 </manifest>
