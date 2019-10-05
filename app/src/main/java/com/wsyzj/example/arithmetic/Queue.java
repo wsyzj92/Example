@@ -41,8 +41,9 @@ public class Queue {
             throw new RuntimeException("queue is empty");
         }
         int element = elements[0];
+
         int[] newArray = new int[elements.length - 1];
-        for (int i = 0; i < elements.length; i++) {
+        for (int i = 0; i < newArray.length; i++) {
             newArray[i] = elements[i + 1];
         }
         elements = newArray;
