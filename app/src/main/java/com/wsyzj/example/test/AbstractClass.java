@@ -1,5 +1,7 @@
 package com.wsyzj.example.test;
 
+import java.io.Serializable;
+
 /**
  * <pre>
  *     author : 焦洋
@@ -9,9 +11,10 @@ package com.wsyzj.example.test;
  *     version: 1.0
  * </pre>
  */
-public class AbstractClass {
+public class AbstractClass implements Cloneable, Serializable {
 
-    public void  aa(){
-
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

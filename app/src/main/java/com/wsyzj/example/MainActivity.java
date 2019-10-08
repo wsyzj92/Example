@@ -18,6 +18,16 @@ public class MainActivity extends AppCompatActivity {
     private String[] mTitles = {"算法", "反射技术", "AOP面向切面用户行为统计"};
     private Class[] mClasses = {ArithmeticActivity.class, ReflectActivity.class, AspectJActivity.class};
 
+    // 静态代码块
+    static {
+
+    }
+
+    // 非静态代码块
+    {
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +44,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }
