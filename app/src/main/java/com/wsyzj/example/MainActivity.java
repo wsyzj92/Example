@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.wsyzj.example.activity.ArithmeticActivity;
 import com.wsyzj.example.activity.ReflectActivity;
 import com.wsyzj.example.aop.AspectJActivity;
+import com.wsyzj.example.arithmetic.Fibonacci;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        int p = Fibonacci.fibonacci(6, "   main  ");
+        System.out.println(p);
     }
 
 
