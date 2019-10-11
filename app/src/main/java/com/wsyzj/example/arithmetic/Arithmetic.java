@@ -39,7 +39,7 @@ public class Arithmetic {
     /**
      * 快速排序(交换排序)
      * 让一个数字作为标准元素，分别从数组中0的位置和length-1的位置左右起点循环
-     * 在循环的过程中，讲小于标准数的放在左边，讲大于标准数的放在右边 按照这个方法一直循环下去，直到排序完成
+     * 在循环的过程中，将小于标准数的放在左边，讲大于标准数的放在右边 按照这个方法一直循环下去，直到排序完成
      */
     public static void quickSort(int[] array, int start, int end) {
         if (array == null) {
@@ -60,10 +60,12 @@ public class Arithmetic {
                 }
                 // 比标准数小的，从右边替换到左边
                 array[low] = array[high];
+
+                // 左边的数比标准数小
                 while (low < high && array[low] <= temp) {
                     low++;
                 }
-                // 比标准数大的，从左右替换到右边
+                // 比标准数大的，从左边替换到右边
                 array[high] = array[low];
             }
             // 把标准数赋值给所在位置的元素，low或者high都可以，因为他两是一样的
