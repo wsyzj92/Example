@@ -38,6 +38,15 @@ public class BinaryTree {
         binaryTree.middleShow();
         // 后序排序
         binaryTree.afterShow();
+        // 查找节点(前序查找)
+        TreeNode frontSearch = binaryTree.frontSearch(1);
+        System.out.println(frontSearch);
+        // 中序排序查找节点 (左根右)
+        TreeNode middleSearch = binaryTree.middleSearch(2);
+        System.out.println(middleSearch);
+        // 后序排序查找节点 (左右根)
+        TreeNode afterSearch = binaryTree.afterSearch(2);
+        System.out.println(afterSearch);
     }
 
     // 前序排序
@@ -53,6 +62,46 @@ public class BinaryTree {
     // 中序排序
     private void afterShow() {
         root.afterShow();
+    }
+
+    /**
+     * 前序排序查找节点 (根左右)
+     *
+     * @param i
+     */
+    private TreeNode frontSearch(int i) {
+        return root.frontSearch(i);
+    }
+
+    /**
+     * 中序排序查找节点 (左根右)
+     *
+     * @param i
+     */
+    private TreeNode middleSearch(int i) {
+        return root.middleSearch(i);
+    }
+
+    /**
+     * 后序排序查找节点 (左右根)
+     *
+     * @param i
+     */
+    private TreeNode afterSearch(int i) {
+        return root.afterSearch(i);
+    }
+
+    /**
+     * 删除指定的节点
+     *
+     * @param i
+     */
+    private void delete(int i) {
+        if (root.value == i) {
+            root = null;
+        } else {
+            root.delete(i);
+        }
     }
 
     private TreeNode root;

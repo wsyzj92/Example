@@ -78,4 +78,108 @@ public class TreeNode {
         }
         System.out.print(value);
     }
+
+    /**
+     * 前序排序查找节点 (根左右)
+     *
+     * @param i
+     * @return
+     */
+    public TreeNode frontSearch(int i) {
+        TreeNode treeNode = null;
+        // 当自己的值知否匹配
+        if (value == i) {
+            return this;
+        } else {
+            // 找左边的节点，可能是空，也可能有值
+            if (leftTreeNode != null) {
+                treeNode = leftTreeNode.frontSearch(i);
+            }
+            // 不为空，说明有值了
+            if (treeNode != null) {
+                return treeNode;
+            }
+            // 找右边的节点
+            if (rightTreeNode != null) {
+                treeNode = rightTreeNode.frontSearch(i);
+            }
+        }
+        return treeNode;
+    }
+
+    /**
+     * 中序排序查找节点 (左根右)
+     *
+     * @param i
+     * @return
+     */
+    public TreeNode middleSearch(int i) {
+        TreeNode treeNode = null;
+        if (leftTreeNode.value == i) {
+            return leftTreeNode;
+        } else {
+            if (this.value == i) {
+                return this;
+            }
+            if (rightTreeNode != null) {
+                treeNode = rightTreeNode.frontSearch(i);
+            }
+        }
+        return treeNode;
+    }
+
+    /**
+     * 后序排序查找节点 (左右根)
+     *
+     * @param i
+     * @return
+     */
+    public TreeNode afterSearch(int i) {
+        TreeNode treeNode = null;
+        if (leftTreeNode.value == i) {
+            return leftTreeNode;
+        } else {
+            if (rightTreeNode != null) {
+                treeNode = rightTreeNode.frontSearch(i);
+            }
+            if (rightTreeNode != null) {
+                return rightTreeNode;
+            }
+            if (this.value == i) {
+                return this;
+            }
+        }
+        return treeNode;
+    }
+
+    /**
+     * 删除指定的节点
+     *
+     * @param i
+     */
+    public void delete(int i) {
+        TreeNode parent = this;
+        // 查看左右的节点
+        if (parent.leftTreeNode != null && parent.leftTreeNode.value == i) {
+            parent.leftTreeNode = null;
+            return;
+        }
+        // 查看右边的节点
+        if (parent.rightTreeNode != null && parent.rightTreeNode.value == i) {
+            parent.rightTreeNode = null;
+            return;
+        }
+
+        // 递归检查并删除左儿子
+        parent = leftTreeNode;
+        if (parent != null) {
+            parent.delete(i);
+        }
+
+        // 递归检查并删除右儿子
+        parent = rightTreeNode;
+        if (parent != null) {
+            parent.delete(i);
+        }
+    }
 }
