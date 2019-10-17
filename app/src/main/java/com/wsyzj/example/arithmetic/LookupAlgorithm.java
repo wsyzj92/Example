@@ -33,10 +33,10 @@ public class LookupAlgorithm {
 
     /**
      * 二分查找 [0,1,2,3,4,5,6,7,8,9]
-     * 首先找到数组中间的数组于 target 进行比较，如果等于就返回。数组必须为有序的
+     * 首先找到数组中间的数与 target 进行比较，如果等于就返回。数组必须为有序的
      * 如果小于 target 就在左边的数组中重新取中间的数组查找
-     * 如果等于 target 就返回下边
-     * 如果小于 target 就在右边的数组中重新取中间的数组查找
+     * 如果等于 target 就返回索引
+     * 如果大于 target 就在右边的数组中重新取中间的数组查找
      *
      * @return
      */
@@ -65,6 +65,7 @@ public class LookupAlgorithm {
                 middle = (start + end) / 2;
             }
 
+            // 中间的数小于target就在右边重新查找
             if (array[middle] < target) {
                 start = middle + 1;
                 middle = (start + end) / 2;
