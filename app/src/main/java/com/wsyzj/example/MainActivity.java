@@ -12,13 +12,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.wsyzj.example.activity.ArithmeticActivity;
 import com.wsyzj.example.activity.ReflectActivity;
+import com.wsyzj.example.activity.RxJavaActivity;
 import com.wsyzj.example.aop.AspectJActivity;
 import com.wsyzj.example.arithmetic.Fibonacci;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String[] mTitles = {"算法", "反射技术", "AOP面向切面用户行为统计"};
-    private Class[] mClasses = {ArithmeticActivity.class, ReflectActivity.class, AspectJActivity.class};
+    private String[] mTitles = {"算法", "反射技术", "AOP面向切面用户行为统计", "RxJava"};
+    private Class[] mClasses = {ArithmeticActivity.class, ReflectActivity.class, AspectJActivity.class, RxJavaActivity.class};
 
     // 静态代码块
     static {

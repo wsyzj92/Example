@@ -25,6 +25,8 @@
         <activity android:name=".activity.ReflectActivity" />
         <!-- AspectJ -->
         <activity android:name=".aop.AspectJActivity" />
+        <!-- Rxjava -->
+        <activity android:name=".activity.RxJavaActivity" />
 
     </application>
 
